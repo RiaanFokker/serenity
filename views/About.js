@@ -7,10 +7,16 @@ export default class About {
 
     async getHtml() {
         return `
-            <h1>Serenity @ 14 Keurbooms River Lodge</h1>
-            <p>
-                <a href="/accommodation" data-link>Click here to book your stay</a>
-            </p>
+            <style>
+                body {
+                    background-image: url('../images/AboutBackground.jpg');
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: 100%;
+                }
+            </style>
+            <img src="../images/AboutBackgroundLogo.png" class="transparentAboutLogo"/>
+            <a class="bookNow" href="/accommodation" data-link>Book Now</a>
         `;
     }
 

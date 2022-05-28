@@ -7,35 +7,66 @@ body {
 /* The navigation bar */
 .nav {
     overflow: hidden;
-    background-color: #333;
+    /* background-color: #333; */
     position: sticky; /* Scaling support */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-  }
-  
-  /* Links inside the navbar */
-  .nav__link {
-    float: left;
-    display: block;
-    color: #9c9c9c;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* Change background on mouse-over */
-  .nav__link:hover {
-    background: rgba(255, 255, 255, 0.198);
-  }
+}
 
+/* Links inside the navbar */
+.nav__link {
+  color: #373333;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-table;
+  margin-top: 55px;
+  margin-left: 50px;
+  justify-content: space-between;
+}
 
-  .nav__link.active  {
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-  /* Main content */
-  #app {
-    line-height: 1.5;
-    font-weight: 500;
-  }
+/* Change background on mouse-over */
+.nav__link:hover {
+  font-weight: 400;
+}
+
+.nav__link.active  {
+  font-weight: 700;
+  text-decoration: overline;
+}
+
+/* Main content */
+#app {
+  line-height: 1.5;
+  font-family: 'Lato';
+}
+
+.transparentAboutLogo {
+  display: block;
+  position: relative;
+  max-width: 40%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.bookNow {
+  color: #373333;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 18px;
+  background-color: #D3CBCA;
+  float: right;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  text-decoration: none;
+  opacity: 50%;
+}
