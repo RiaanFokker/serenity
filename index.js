@@ -1,4 +1,4 @@
-import Overview from "./views/Overview.js";
+import About from "./views/About.js";
 import Accommodation from "./views/Accommodation.js";
 import Explore from "./views/Explore.js"; 
 
@@ -9,7 +9,7 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        { path: "/", view: Overview },
+        { path: "/", view: About },
         { path: "/accommodation", view: Accommodation },
         { path: "/explore", view: Explore },
     ];

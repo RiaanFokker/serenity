@@ -1,5 +1,5 @@
 const siteName = "Serenity";
-const overviewTab = "Overview";
+const aboutTab = "About";
 const accommodationTab = "Accommodation";
 const exploreTab = "Explore";
 
@@ -8,8 +8,8 @@ export default class Constants {
         return siteName;
     }
 
-    static get overviewTab() {
-        return overviewTab;
+    static get aboutTab() {
+        return aboutTab;
     }
 
     static get accommodationTab() {
