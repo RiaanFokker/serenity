@@ -3,36 +3,6 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
 }
-
-/* The navigation bar */
-.nav {
-    overflow: hidden;
-    background-color: #333;
-    position: sticky; /* Scaling support */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-  }
-  
-  /* Links inside the navbar */
-  .nav__link {
-    float: left;
-    display: block;
-    color: #9c9c9c;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* Change background on mouse-over */
-  .nav__link:hover {
-    background: rgba(255, 255, 255, 0.198);
-  }
-
-
-  .nav__link.active  {
-    font-weight: bold;
-    color: #ffffff;
-  }
   
   /* Main content */
   #app {
