@@ -1,0 +1,33 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100svh;
+  background-image: url('../../assets/images/full_quality/background.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  color: white;
+}
+
+.landing-page h1 {
+  font-size: 7vmax;
+  margin-top: 41.6vh; /* For older browsers */
+  margin-top: 25svh;
+}
+
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5) as needed */
+  z-index: 1;
+}
+
+.landing-page * {
+  position: relative;
+  z-index: 2;
+}

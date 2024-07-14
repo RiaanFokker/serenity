@@ -1,0 +1,68 @@
+/* //ACF remove all this shit
+/* Default Screen Widths */
+
+/* .app-defaults {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 32px 32px;
+} */
+
+/* Narrow Screen Widths */
+
+/* @media (max-width: 768px) {
+    .app-defaults {
+        padding-left: 12.5%;
+        padding-right: 12.5%;
+        margin: 32px 32px;
+    }
+} */
+
+/* Extra Narrow Screen Widths */
+
+/* @media (max-width: 480px) {
+    .app-defaults {
+        padding-left: 7%;
+        padding-right: 7%;
+        margin: 18px 14px;
+    }
+} */
+
+/* Super Narrow Screen Widths */
+
+/* @media (max-width: 320px) {
+    .app-defaults {
+        padding-left: 7%;
+        padding-right: 7%;
+        margin: 18px 14px;
+    }
+} */
+
+/* Wide Screen Widths */
+
+/* @media (min-width: 1300px) {
+    .app-defaults {
+        padding-left: 20%;
+        padding-right: 20%;
+        margin: 32px 32px;
+    }
+} */
+
+/* Extra Wide Screen Widths */
+
+/* @media (min-width: 1800px) {
+    .app-defaults {
+        padding-left: 25%;
+        padding-right: 25%;
+        margin: 32px 80px;
+    }
+} */
+
+/* Super Wide Screen Widths */
+
+/* @media (min-width: 2300px) {
+    .app-defaults {
+        padding-left: 30%;
+        padding-right: 30%;
+        margin: 32px 80px;
+    }
+} */
