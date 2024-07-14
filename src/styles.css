@@ -2,6 +2,7 @@
 html body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
+    color: rgb(8, 8, 68);
 }
 
 html body h1 {
@@ -20,5 +21,5 @@ border-radius: 4px;
 
 ::-webkit-scrollbar-track {
 /*background: rgba(0, 0, 0, 0.1); /* Track color */
-background: rgb(58, 58, 58); /* Track color */
+background: rgb(122, 122, 122); /* Track color */
 }
