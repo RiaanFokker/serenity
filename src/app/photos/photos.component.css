@@ -1,0 +1,44 @@
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lightgallery.css');
+
+.container {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+}
+
+.gallery-item {
+    margin: -1px 2px;
+    display: inline-block;
+    height: 10rem;
+    width: 10rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img,
+.img-responsive {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1200px) {
+    .gallery-item {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media (min-width: 1201px) {
+    .container {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}
