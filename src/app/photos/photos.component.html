@@ -3,7 +3,15 @@
     <h4 class="col-12 col-md-8 offset-md-2 text-center mb-4">Experience the Garden Route while living in style!</h4>
   </div>
   <div class="row mb-4">
-    <lightgallery>
+    <lightgallery
+    [settings]="{
+      mobileSettings: {
+        controls: true,
+        showCloseIcon: true,
+        download: false
+      },
+      download: false
+    }">
       
       <a class="gallery-item rounded" 
         data-src="assets/images/full_quality/patio.jpg" 
