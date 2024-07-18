@@ -3,96 +3,14 @@
     <h4 class="col-12 col-md-8 offset-md-2 text-center mb-4">Experience the Garden Route while living in style!</h4>
   </div>
   <div class="row mb-4">
-    <lightgallery
-    [settings]="{
-      mobileSettings: {
-        controls: true,
-        showCloseIcon: true,
-        download: false
-      },
-      download: false
-    }">
+    <lightgallery [settings]="settings">
       
       <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/patio.jpg" 
-        data-sub-html="<p>Covered patio overlooking the beautiful gardens and Keurbooms river with Weber braai</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/patio.jpg" alt="" />
-      </a>      
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/open_plan_living_area.jpg" 
-        data-sub-html="<p>Open plan living area that walks out onto the covered patio</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/open_plan_living_area.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/couch.jpg" 
-        data-sub-html="<p>Open plan living area</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/couch.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/kitchen.jpg" 
-        data-sub-html="<p>Open plan fully equipped kitchen with everything you need for your holiday</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/kitchen.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/kitchen_2.jpg" 
-        data-sub-html="<p>Kitchen</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/kitchen_2.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/tv_bar.jpg" 
-        data-sub-html="<p>Bar area</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/tv_bar.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/tv_bar_2.jpg" 
-        data-sub-html="<p>Smart Android TV</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/tv_bar_2.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/room_1.jpg" 
-        data-sub-html="<p>Bedroom 1 - with 2 x Single XL Beds that can be converted to King XL</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/room_1.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/bathroom_1.jpg" 
-        data-sub-html="<p>Bathroom 1 - En-suite with shower</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/bathroom_1.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/room_2.jpg" 
-        data-sub-html="<p>Bedroom 2 - with Queen XL bed and a view of the gardens</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/room_2.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/room_2_2.jpg" 
-        data-sub-html="<p>Bedroom 2 - with Queen XL bed</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/room_2_2.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/bathroom_2.jpg" 
-        data-sub-html="<p>Bathroom 2 - En-suite with shower</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/bathroom_2.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/patio_view.jpg" 
-        data-sub-html="<p>Your view from the patio</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/patio_view.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/playground.jpg" 
-        data-sub-html="<p>Playground for the kids</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/playground.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/tennis_court.jpg" 
-        data-sub-html="<p>Tennis Court</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/tennis_court.jpg" alt="" />
-      </a>
-      <a class="gallery-item rounded" 
-        data-src="assets/images/full_quality/pool_area.jpg" 
-        data-sub-html="<p>Pool Area</p>">
-          <img class="img-responsive" src="assets/images/thumbnails/pool_area.jpg" alt="" />
-      </a>
+        *ngFor="let photo of photos"
+        [attr.data-src]="photo.photo" 
+        [attr.data-sub-html]="photo.caption">
+          <img class="img-responsive" [src]="photo.thumbnail" alt="" />
+      </a> 
 
     </lightgallery>
   </div>
