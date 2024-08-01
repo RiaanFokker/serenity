@@ -6,13 +6,16 @@
         <h5 class="col-12 col-md-8 offset-md-2 text-left">1 December - 15 January</h5>
         <p class="col-12 col-md-8 offset-md-2 text-left">R2450 per night and a minimum stay of 14 nights</p>
     </div>
-    <div class="row col-12 col-md-10 offset-md-1 text-center mt-4">
-        <img src="assets/images/full_quality/keurbooms_river.jpg" alt="">
-        <p class="mt-1">The Keurbooms River Lodge with rolling green lawns just a stone throw away from the ocean</p>
-    </div>
-    <div class="row col-12 col-md-10 offset-md-1 text-center mt-4">
-        <img src="assets/images/full_quality/sunset.jpg" alt="">
-        <p class="mt-1">A view of the sunset over the Keurbooms River right from your doorstep</p>
+    <div class="row text-center">
+      <lightgallery [settings]="settings">
+        <a style="--bs-link-opacity: .5" 
+          *ngFor="let photo of photos"
+          [attr.data-src]="photo.photo" 
+          [attr.data-sub-html]="photo.caption">
+            <img class="thumbnail-image rounded img-responsive img-fluid mt-3" [src]="photo.thumbnail" alt="" />
+            <p class="mt-1">{{photo.caption}}</p>
+        </a>
+      </lightgallery>
     </div>
     <hr class="col-4 offset-4">
 </div>
