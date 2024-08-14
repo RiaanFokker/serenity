@@ -1,4 +1,4 @@
-import { Injectable, isDevMode } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -11,61 +11,59 @@ export class LoadingService {
   private loadingResources: Set<string> = new Set();
   private observer: PerformanceObserver;
 
-  private numberOfResources = 25;
+  private numberOfResources = 22;
   private count = 0;
-  // private totalSize = 0;
-  // private replace1 = 'http://localhost:4200/';
-  // private replace2 = 'https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/';
 
   constructor() {
     this.observer = new PerformanceObserver((list) => {
-      // console.log(list.getEntries().length);
-      // console.log(list.getEntries());
-      list.getEntries().forEach((entry) => {
-        if (entry.entryType === 'resource') {
-          if (isDevMode() && !this.count)
-            this.numberOfResources--;
-          // let sizeInKb = 0
-          // if ('transferSize' in entry && entry instanceof PerformanceResourceTiming) {
-          //   sizeInKb = entry.transferSize / (1024);
-          // }
+      list.getEntriesByType('resource').forEach(async (entry) => {
+        const resourceEntry = entry as PerformanceResourceTiming;
 
-          this.count++;
+        if (resourceEntry.initiatorType != "img")
+          return;
 
-          // console.log(`${this.count} - Resource: ${entry.name.replace(this.replace1, '').replace(this.replace2, '')}, Load Start Time After Page Init: ${(entry.startTime / 1000).toFixed(2)}s, Duration: ${(entry.duration / 1000).toFixed(2)}s, Size: ${sizeInKb.toFixed(2)}kb`);
+        this.count++;
 
-          // if (this.count >= this.numberOfResources)
-          //   console.log(`Total init size: ${this.totalSize.toFixed(2)}kb`);
-
-          if (entry.duration === 0) {
-            // Entry is starting to load
-            this.loadingResources.add(entry.name);
-          } else {
-            // Entry has finished loading
-            this.loadingResources.delete(entry.name);
-          }
-
-          if (this.count > this.numberOfResources)
-            throw new Error(`Update number of resources to load (numberOfResources = ${this.count})`)
-
-          // this.totalSize += sizeInKb;
-          let downloadProgress = this.count / this.numberOfResources * 100;
-
-          if (entry.name.endsWith('favicon.ico') || downloadProgress > 99.5 || this.count == this.numberOfResources)
-          {
-            downloadProgress = 100;
-            if (this.count < this.numberOfResources)
-              throw new Error(`Update number of resources to load (numberOfResources = ${this.count})`)
-          }
-            
-          this.progressSubject.next(downloadProgress);
+        if (resourceEntry.duration === 0) {
+          // Entry is starting to load
+          this.loadingResources.add(resourceEntry.name);
+        } else {
+          // Entry has finished loading
+          this.loadingResources.delete(resourceEntry.name);
         }
+
+        if (this.count > this.numberOfResources)
+          throw new Error(`Update number of resources to load (numberOfResources = ${this.count})`)
+
+        let downloadProgress = this.count / this.numberOfResources * 100;
+
+        if (downloadProgress > 99.5 || this.count == this.numberOfResources) {
+          downloadProgress = 100;
+
+          if (this.count < this.numberOfResources)
+            throw new Error(`Update number of resources to load (numberOfResources = ${this.count})`)
+        }
+
+        this.progressSubject.next(downloadProgress);
       });
     });
+
     this.observer.observe({ entryTypes: ['resource'] });
   }
 
-  getLoadingStatus(): boolean {
-    return this.loadingResources.size > 0;
+  haveBackgroundImage(): Promise<boolean> {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = 'assets/images/full_quality/background.jpg';
+
+      // Handle the case where the image is cached
+      if (img.complete && img.naturalWidth !== 0) {
+        resolve(true);
+      } else {
+        // Listen for load event to handle images that are not immediately complete
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+      }
+    });
   }
 }

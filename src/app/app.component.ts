@@ -33,9 +33,9 @@ export class AppComponent implements OnInit, OnDestroy {
     //   error => console.log('HTTP request error', error)
     // );
     this.progressSub = this.loadingService.progress$.subscribe(progress => {
-      this.ngZone.run(() => {
+      this.ngZone.run(async () => {
         this.progress = progress;
-        this.loading = progress < 100;
+        this.loading = !await this.loadingService.haveBackgroundImage();
       });
     });
   }
