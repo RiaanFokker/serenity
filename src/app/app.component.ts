@@ -36,14 +36,13 @@ export class AppComponent implements OnInit, OnDestroy {
       this.ngZone.run(async () => {
         this.progress = progress;
         this.loading = !await this.loadingService.haveBackgroundImage();
+        if (!this.loading)
+          this.loadingService.unsubscribe();
       });
     });
   }
 
   ngOnDestroy(): void {
-    if (this.progressSub) {
-      this.progressSub.unsubscribe();
-      console.log('Destroyed')
-    }
+    this.progressSub.unsubscribe();
   }
 }

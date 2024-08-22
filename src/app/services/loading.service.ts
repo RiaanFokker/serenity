@@ -66,4 +66,9 @@ export class LoadingService {
       }
     });
   }
+
+  unsubscribe() {
+    this.progressSubject.unsubscribe();
+    this.observer.disconnect();
+  }
 }
