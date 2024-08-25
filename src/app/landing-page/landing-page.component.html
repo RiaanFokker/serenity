@@ -1,4 +1,32 @@
 <div class="landing-page">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-end me-2">
+            <div class="dropdown">
+                <button class="btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="background: transparent; border: none; padding: 0;">
+                    <div appClickAway (appClickAway)="hideDropdown()">
+                        <svg #hamburgerMenu class="ham hamRotate ham1" viewBox="0 0 100 100" width="80"
+                            (click)="toggleHamRotate()">
+                            <path class="line top"
+                                d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+                                style="stroke:#ffffff; stroke-width:3; fill:none;" />
+                            <path class="line middle" d="m 30,50 h 40"
+                                style="stroke:#ffffff; stroke-width:3; fill:none;" />
+                            <path class="line bottom"
+                                d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+                                style="stroke:#ffffff; stroke-width:3; fill:none;" />
+                        </svg>
+                    </div>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#" (click)="scrollToComponent('rates')">Rates</a></li>
+                    <li><a class="dropdown-item" href="#" (click)="scrollToComponent('book')">Book Now</a></li>
+                    <li><a class="dropdown-item" href="#" (click)="scrollToComponent('photos')">Photos</a></li>
+                    <li><a class="dropdown-item" href="#" (click)="scrollToComponent('amenities')">Amenities</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <h1>Serenity</h1>
     <p class="fs-4">&#64; 14 KEURBOOMS RIVER LODGE</p>
     <div class="d-flex flex-column justify-content-end" style="height: 100%">

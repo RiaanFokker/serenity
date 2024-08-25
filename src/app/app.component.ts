@@ -8,8 +8,9 @@ import { AmenitiesComponent } from './amenities/amenities.component';
 import { OutroComponent } from './outro/outro.component';
 import { LoadingService } from './services/loading.service';
 import { SplashScreenComponent } from "./splash-screen/splash-screen.component";
-import { NgIf } from '@angular/common';
+import { NgIf, ViewportScroller } from '@angular/common';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { EventService } from './services/event.service';
 
 @Component({
   selector: 'app-root',
@@ -19,12 +20,13 @@ import { Subscription } from 'rxjs/internal/Subscription';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit, OnDestroy  {
   private progressSub!: Subscription;
+  private scrollToComponentEventSubscription!: Subscription;
   loading: boolean = true;
   progress: number = 0;
 
-  constructor(private loadingService: LoadingService, private ngZone: NgZone) { }
+  constructor(private loadingService: LoadingService, private ngZone: NgZone, private scroller: ViewportScroller, private eventService: EventService) { }
 
   ngOnInit() {
     // Dummy request
@@ -40,9 +42,16 @@ export class AppComponent implements OnInit, OnDestroy {
           this.loadingService.unsubscribe();
       });
     });
+
+    this.scrollToComponentEventSubscription = this.eventService.scrollToComponentEventSubject$.subscribe(componentId => this.scrollToComponent(componentId));
+  }
+
+  scrollToComponent(componentId: string) {
+    this.scroller.scrollToAnchor(componentId);
   }
 
   ngOnDestroy(): void {
     this.progressSub.unsubscribe();
+    this.scrollToComponentEventSubscription.unsubscribe();
   }
 }
