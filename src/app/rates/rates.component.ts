@@ -11,6 +11,12 @@ import { Photo } from '../photos/photos.component';
   styleUrl: './rates.component.css'
 })
 export class RatesComponent {
+  standardRate = 1400
+  standardMinNights = 5
+
+  peakRate = 2700
+  peakMinNights = 14
+
   settings = {
     mobileSettings: {
       controls: true,
