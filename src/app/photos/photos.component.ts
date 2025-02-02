@@ -9,11 +9,10 @@ export interface Photo {
 }
 
 @Component({
-  selector: 'app-photos',
-  standalone: true,
-  imports: [LightgalleryModule, NgFor],
-  templateUrl: './photos.component.html',
-  styleUrl: './photos.component.css'
+    selector: 'app-photos',
+    imports: [LightgalleryModule, NgFor],
+    templateUrl: './photos.component.html',
+    styleUrl: './photos.component.css'
 })
 
 export class PhotosComponent {

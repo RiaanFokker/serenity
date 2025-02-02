@@ -13,11 +13,10 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { EventService } from './services/event.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [LandingPageComponent, IntroComponent, ContactComponent, PhotosComponent, RatesComponent, AmenitiesComponent, OutroComponent, SplashScreenComponent, NgIf],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [LandingPageComponent, IntroComponent, ContactComponent, PhotosComponent, RatesComponent, AmenitiesComponent, OutroComponent, SplashScreenComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 
 export class AppComponent implements OnInit, OnDestroy  {

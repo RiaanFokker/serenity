@@ -4,11 +4,10 @@ import { LightgalleryModule } from 'lightgallery/angular';
 import { Photo } from '../photos/photos.component';
 
 @Component({
-  selector: 'app-rates',
-  standalone: true,
-  imports: [LightgalleryModule, NgFor],
-  templateUrl: './rates.component.html',
-  styleUrl: './rates.component.css'
+    selector: 'app-rates',
+    imports: [LightgalleryModule, NgFor],
+    templateUrl: './rates.component.html',
+    styleUrl: './rates.component.css'
 })
 export class RatesComponent {
   standardRate = 1400

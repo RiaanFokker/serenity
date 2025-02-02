@@ -3,11 +3,10 @@ import { ClickAwayDirective } from '../directives/click-away.directive';
 import { EventService } from '../services/event.service';
 
 @Component({
-  selector: 'app-landing-page',
-  standalone: true,
-  imports: [ClickAwayDirective],
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.css'
+    selector: 'app-landing-page',
+    imports: [ClickAwayDirective],
+    templateUrl: './landing-page.component.html',
+    styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent implements OnInit {
   @ViewChild(ClickAwayDirective, { static: true }) clickAwayDirective!: ClickAwayDirective;
