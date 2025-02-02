@@ -25,3 +25,34 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+-------------------------------------------
+Deploy
+-------------------------------------------
+Deploy local changes to GH Pages:
+ng deploy
+
+Update domain on GH Pages back to keurboomsrl.co.za
+-------------------------------------------
+
+-------------------------------------------
+Update
+-------------------------------------------
+Update the Angular CLI Globally:
+npm install -g @angular/cli@latest
+
+Update TypeScript Globally:
+npm install -g typescript
+
+Update Angular CLI and Core Packages:
+ng update @angular/cli @angular/core
+
+Update Other Dependencies:
+ng update
+
+Clean and Rebuild:
+delete node_modules and package-lock.json
+npm cache clean --force
+npm install
+ng serve
+-------------------------------------------
