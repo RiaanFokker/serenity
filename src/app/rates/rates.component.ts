@@ -19,11 +19,12 @@ export class RatesComponent {
 
   settings = {
     mobileSettings: {
-      controls: true,
+      controls: false,
       showCloseIcon: true,
       download: false
     },
     download: false,
+    controls: false,
     hideScrollbar: true,
     mousewheel: true
   };
@@ -39,10 +40,6 @@ export class RatesComponent {
         fileName: 'keurbooms_river.jpg',
         caption: 'The Keurbooms River Lodge with rolling green lawns just a stone throw away from the ocean'
       },
-      {
-        fileName: 'sunset.jpg',
-        caption: 'A view of the sunset over the Keurbooms River right from your doorstep'
-      }
     ];
 
     let photos: Photo[] = [];

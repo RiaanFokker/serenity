@@ -36,6 +36,26 @@ export class PhotosComponent {
 
     const files = [
       {
+        fileName: 'beach.jpg',
+        caption: 'Keurbooms Beach'
+      },
+      {
+        fileName: 'beach_2.jpg',
+        caption: 'Keurbooms Beach'
+      },
+      {
+        fileName: 'river.jpg',
+        caption: 'Keurbooms River'
+      },
+      {
+        fileName: 'sunset.jpg',
+        caption: 'A view of the sunset over the Keurbooms River right from your doorstep'
+      },
+      {
+        fileName: 'kayak.jpg',
+        caption: 'Keurbooms River Kayaking'
+      },
+      {
         fileName: 'patio.jpg',
         caption: 'Covered patio overlooking the beautiful gardens and Keurbooms river with Weber braai'
       },
@@ -98,7 +118,7 @@ export class PhotosComponent {
       {
         fileName: 'pool_area.jpg',
         caption: 'Pool Area'
-      }
+      },
     ];
 
     let photos: Photo[] = [];
