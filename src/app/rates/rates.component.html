@@ -1,21 +1,26 @@
 <div class="container mt-5">
-    <div class="row">
-        <h2 class="col-12 col-md-8 offset-md-2 text-center mb-3">Rates</h2> 
-        <h5 class="col-12 col-md-8 offset-md-2 text-left">Standard rates</h5>
-        <p class="col-12 col-md-8 offset-md-2 text-left">R{{standardRate}} per night and a minimum stay of {{standardMinNights}} nights</p>
-        <h5 class="col-12 col-md-8 offset-md-2 text-left">1 December - 15 January</h5>
-        <p class="col-12 col-md-8 offset-md-2 text-left">R{{peakRate}} per night and a minimum stay of {{peakMinNights}} nights</p>
+  <div class="row">
+    <h2 class="col-12 col-md-8 offset-md-2 text-center mb-3">Rates</h2>
+    <div *ngIf="showSpecials">
+      <h5 class="col-12 col-md-8 offset-md-2 text-left">Special ending {{endDate | date:'dd MMM yyyy'}}</h5>
+      <p class="col-12 col-md-8 offset-md-2 text-left">R{{specialRate}} per night and a minimum stay of
+        {{specialMinNights}} nights</p>
     </div>
-    <div class="row text-center">
-      <lightgallery [settings]="settings">
-        <a style="--bs-link-opacity: .5" 
-          *ngFor="let photo of photos"
-          [attr.data-src]="photo.photo" 
-          [attr.data-sub-html]="photo.caption">
-            <img class="thumbnail-image rounded img-responsive img-fluid mt-3" [src]="photo.thumbnail" alt="" />
-            <p class="mt-1">{{photo.caption}}</p>
-        </a>
-      </lightgallery>
-    </div>
-    <hr class="col-4 offset-4">
+    <h5 class="col-12 col-md-8 offset-md-2 text-left">Standard rates</h5>
+    <p class="col-12 col-md-8 offset-md-2 text-left">R{{standardRate}} per night and a minimum stay of
+      {{standardMinNights}} nights</p>
+    <h5 class="col-12 col-md-8 offset-md-2 text-left">1 December - 15 January</h5>
+    <p class="col-12 col-md-8 offset-md-2 text-left">R{{peakRate}} per night and a minimum stay of {{peakMinNights}}
+      nights</p>
+  </div>
+  <div class="row text-center">
+    <lightgallery [settings]="settings">
+      <a style="--bs-link-opacity: .5" *ngFor="let photo of photos" [attr.data-src]="photo.photo"
+        [attr.data-sub-html]="photo.caption">
+        <img class="thumbnail-image rounded img-responsive img-fluid mt-3" [src]="photo.thumbnail" alt="" />
+        <p class="mt-1">{{photo.caption}}</p>
+      </a>
+    </lightgallery>
+  </div>
+  <hr class="col-4 offset-4">
 </div>

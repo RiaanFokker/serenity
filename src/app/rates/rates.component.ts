@@ -1,15 +1,20 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { Photo } from '../photos/photos.component';
 
 @Component({
     selector: 'app-rates',
-    imports: [LightgalleryModule, NgFor],
+    imports: [LightgalleryModule, NgFor, NgIf, DatePipe],
     templateUrl: './rates.component.html',
     styleUrl: './rates.component.css'
 })
 export class RatesComponent {
+  specialRate = 1000
+  specialMinNights = 5
+  endDate = new Date('2025-07-31')
+  showSpecials = new Date() < this.endDate;
+
   standardRate = 1400
   standardMinNights = 5
 
