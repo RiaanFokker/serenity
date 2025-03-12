@@ -1,15 +1,30 @@
 import { NgFor, NgIf, DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { Photo } from '../photos/photos.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarOptions } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import { IcalService } from '../services/ical.service';
 
 @Component({
     selector: 'app-rates',
-    imports: [LightgalleryModule, NgFor, NgIf, DatePipe],
+    imports: [LightgalleryModule, NgFor, NgIf, DatePipe, FullCalendarModule],
     templateUrl: './rates.component.html',
     styleUrl: './rates.component.css'
 })
-export class RatesComponent {
+export class RatesComponent implements OnInit {
+  constructor(private icalService: IcalService) { }
+  //ACF need a proxy server to fetch the calendar data because https://cors-anywhere.herokuapp.com/ is only for development purposes and not stable for production use
+  ngOnInit() {
+    const icalLink = 'https://www.airbnb.com/calendar/ical/...'
+    this.icalService.getEvents('https://cors-anywhere.herokuapp.com/' + icalLink)
+      .subscribe(events => {
+        this.calendarOptions.events = events;
+      });
+  }
+
   specialRate = 1000
   specialMinNights = 5
   endDate = new Date('2025-07-31')
@@ -34,6 +49,12 @@ export class RatesComponent {
   };
 
   photos = this.getPhotoList();
+
+  calendarOptions: CalendarOptions = {
+    plugins: [dayGridPlugin, interactionPlugin],
+    initialView: 'dayGridMonth',
+    events: []
+  };
 
   private getPhotoList(): Photo[] {
     const photosPath = 'assets/images/full_quality/'
