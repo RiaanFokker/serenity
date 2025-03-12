@@ -11,7 +11,7 @@ export class LoadingService {
   private loadingResources: Set<string> = new Set();
   private observer: PerformanceObserver;
 
-  private numberOfResources = 22;
+  private numberOfResources = 27;
   private count = 0;
 
   constructor() {
