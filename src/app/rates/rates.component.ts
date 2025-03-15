@@ -15,7 +15,7 @@ export class RatesComponent {
   endDate = new Date('2025-07-31')
   showSpecials = new Date() < this.endDate;
 
-  standardRate = 1400
+  standardRate = 1200
   standardMinNights = 5
 
   peakRate = 2700
