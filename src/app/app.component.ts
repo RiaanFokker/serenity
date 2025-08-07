@@ -8,7 +8,7 @@ import { AmenitiesComponent } from './amenities/amenities.component';
 import { OutroComponent } from './outro/outro.component';
 import { LoadingService } from './services/loading.service';
 import { SplashScreenComponent } from "./splash-screen/splash-screen.component";
-import { NgIf, ViewportScroller } from '@angular/common';
+import { ViewportScroller } from '@angular/common';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { EventService } from './services/event.service';
 

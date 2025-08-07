@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-splash-screen',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './splash-screen.component.html',
     styleUrls: ['./splash-screen.component.css']
 })

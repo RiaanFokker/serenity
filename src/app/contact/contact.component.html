@@ -1,27 +1,29 @@
 <div class="container mt-5">
-    <div class="row">
-        <h2 class="col-12 col-md-8 offset-md-2 text-center mb-3">{{ heading }}</h2>
-        <p class="col-12 col-md-8 offset-md-2 text-center">Email
-            <a href="mailto:serenity@keurboomsrl.co.za">serenity&#64;keurboomsrl.co.za</a>
-            or WhatsApp <a href="tel:+27615153750">+27 61 515 3750</a> us to book your stay.
-        </p>
+  <div class="row">
+    <h2 class="col-12 col-md-8 offset-md-2 text-center mb-3">{{ heading }}</h2>
+    <p class="col-12 col-md-8 offset-md-2 text-center">Email
+      <a href="mailto:serenity@keurboomsrl.co.za">serenity&#64;keurboomsrl.co.za</a>
+      or WhatsApp <a href="tel:+27615153750">+27 61 515 3750</a> us to book your stay.
+    </p>
+  </div>
+  <div class="row justify-content-center">
+    <p class="text-center">Also find us here:</p>
+    <div class="d-grid gap-2 d-flex justify-content-center mb-3">
+      <a href="https://www.facebook.com/profile.php?id=100088263451742" target="_blank" class="btn btn-primary">
+        <img src="assets/icons/facebook.svg" alt="">
+        Facebook
+      </a>
+      <a href="https://goo.gl/maps/MomBUt3oqRJMDcme6" target="_blank" class="btn btn-success">
+        <img src="assets/icons/google.svg" alt="">
+        Maps
+      </a>
+      <a href="https://airbnb.co.za/h/serenity14keurbooms" target="_blank" class="btn btn-danger">
+        <img src="assets/icons/airbnb.svg" alt="">
+        Airbnb
+      </a>
     </div>
-    <div class="row justify-content-center">
-        <p class="text-center">Also find us here:</p>
-        <div class="d-grid gap-2 d-flex justify-content-center mb-3">
-            <a href="https://www.facebook.com/profile.php?id=100088263451742" target="_blank" class="btn btn-primary">
-                <img src="assets/icons/facebook.svg" alt="">
-                Facebook
-            </a>
-            <a href="https://goo.gl/maps/MomBUt3oqRJMDcme6" target="_blank" class="btn btn-success">
-                <img src="assets/icons/google.svg" alt="">
-                Maps
-            </a>
-            <a href="https://airbnb.co.za/h/serenity14keurbooms" target="_blank" class="btn btn-danger">
-                <img src="assets/icons/airbnb.svg" alt="">
-                Airbnb
-            </a>
-        </div>
-    </div>
-    <hr *ngIf="showFooterLine" class="col-4 offset-4">
+  </div>
+  @if (showFooterLine) {
+    <hr class="col-4 offset-4">
+  }
 </div>

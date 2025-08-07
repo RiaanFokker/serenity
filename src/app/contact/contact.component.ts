@@ -1,9 +1,9 @@
-import { NgIf } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-contact',
-    imports: [NgIf],
+    imports: [],
     templateUrl: './contact.component.html',
     styleUrl: './contact.component.css'
 })

@@ -1,6 +1,8 @@
-<div class="splash-screen" *ngIf="isLoading">
+@if (isLoading) {
+  <div class="splash-screen">
     <h1>Loading...</h1>
     <div class="progress-bar">
-        <div class="progress" [style.width.%]="progress"></div>
+      <div class="progress" [style.width.%]="progress"></div>
     </div>
-</div>
+  </div>
+}

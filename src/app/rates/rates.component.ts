@@ -1,11 +1,11 @@
-import { NgFor, NgIf, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { Photo } from '../photos/photos.component';
 
 @Component({
     selector: 'app-rates',
-    imports: [LightgalleryModule, NgFor, NgIf, DatePipe],
+    imports: [LightgalleryModule, DatePipe],
     templateUrl: './rates.component.html',
     styleUrl: './rates.component.css'
 })

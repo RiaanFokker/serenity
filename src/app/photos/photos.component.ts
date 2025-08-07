@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { LightgalleryModule } from 'lightgallery/angular';
 
@@ -10,7 +10,7 @@ export interface Photo {
 
 @Component({
     selector: 'app-photos',
-    imports: [LightgalleryModule, NgFor],
+    imports: [LightgalleryModule],
     templateUrl: './photos.component.html',
     styleUrl: './photos.component.css'
 })
@@ -36,11 +36,11 @@ export class PhotosComponent {
     const files = [
       {
         fileName: 'beach.jpg',
-        caption: 'Keurbooms Beach'
+        caption: 'Keurbooms Beach - 10 minute walk'
       },
       {
         fileName: 'beach_2.jpg',
-        caption: 'Keurbooms Beach'
+        caption: 'Keurbooms Beach - 10 minute walk'
       },
       {
         fileName: 'river.jpg',
@@ -84,23 +84,23 @@ export class PhotosComponent {
       },
       {
         fileName: 'room_1.jpg',
-        caption: 'Bedroom 1 - with 2 x Single XL Beds that can be converted to King XL'
+        caption: 'Bedroom 2 - with 2 x Single XL Beds that can be converted to King XL'
       },
       {
         fileName: 'bathroom_1.jpg',
-        caption: 'Bathroom 1 - En-suite with shower'
+        caption: 'Bathroom 2 - En-suite with shower'
       },
       {
         fileName: 'room_2.jpg',
-        caption: 'Bedroom 2 - with Queen XL bed and a view of the gardens'
+        caption: 'Bedroom 1 - with Queen XL bed and a view of the gardens'
       },
       {
         fileName: 'room_2_2.jpg',
-        caption: 'Bedroom 2 - with Queen XL bed'
+        caption: 'Bedroom 1 - with Queen XL bed'
       },
       {
         fileName: 'bathroom_2.jpg',
-        caption: 'Bathroom 2 - En-suite with shower'
+        caption: 'Bathroom 1 - En-suite with shower'
       },
       {
         fileName: 'patio_view.jpg',
