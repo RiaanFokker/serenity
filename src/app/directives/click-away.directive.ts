@@ -10,9 +10,8 @@ export class ClickAwayDirective {
   constructor(private elementRef: ElementRef) {}
 
   @HostListener('document:click', ['$event.target'])
-  public onClick(targetElement: HTMLElement) {
-    const clickedInside = this.elementRef.nativeElement.contains(targetElement);    
-    if (!clickedInside) {
+  public onClick(targetElement: EventTarget | null) {
+    if (!(targetElement instanceof Node) || !this.elementRef.nativeElement.contains(targetElement)) {
       this.clickAwayEvent.emit();
     }
   }
