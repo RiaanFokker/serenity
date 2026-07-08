@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { LightgalleryModule } from 'lightgallery/angular';
 
 export interface Photo {
@@ -12,6 +12,7 @@ export interface Photo {
     selector: 'app-photos',
     imports: [LightgalleryModule],
     templateUrl: './photos.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './photos.component.css'
 })
 

@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { Photo } from '../photos/photos.component';
 
@@ -7,6 +7,7 @@ import { Photo } from '../photos/photos.component';
     selector: 'app-rates',
     imports: [LightgalleryModule, DatePipe],
     templateUrl: './rates.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './rates.component.css'
 })
 export class RatesComponent {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ClickAwayDirective } from '../directives/click-away.directive';
 import { EventService } from '../services/event.service';
 
@@ -6,6 +6,7 @@ import { EventService } from '../services/event.service';
     selector: 'app-landing-page',
     imports: [ClickAwayDirective],
     templateUrl: './landing-page.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent implements OnInit {

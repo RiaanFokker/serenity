@@ -1,4 +1,4 @@
-import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Component, NgZone, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { IntroComponent } from './intro/intro.component';
 import { ContactComponent } from './contact/contact.component';
@@ -16,6 +16,7 @@ import { EventService } from './services/event.service';
     selector: 'app-root',
     imports: [LandingPageComponent, IntroComponent, ContactComponent, PhotosComponent, RatesComponent, AmenitiesComponent, OutroComponent, SplashScreenComponent],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.css'
 })
 
