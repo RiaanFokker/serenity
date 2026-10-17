@@ -85,7 +85,7 @@ export class PhotosComponent {
       },
       {
         fileName: 'room_1.jpg',
-        caption: 'Bedroom 2 - with 2 x Single XL Beds that can be converted to King XL'
+        caption: 'Bedroom 2 - with 2 x Single XL beds'
       },
       {
         fileName: 'bathroom_1.jpg',
